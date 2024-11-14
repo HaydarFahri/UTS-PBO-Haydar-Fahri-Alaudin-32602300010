@@ -72,4 +72,19 @@ Kelas ini adalah inti dari aplikasi yang mengelola daftar buku dan anggota. Kela
 
 ### Menambah Buku Baru:
 ![image](https://github.com/user-attachments/assets/de6de281-b03b-4818-b083-b3d860cc9ecd)
+![image](https://github.com/user-attachments/assets/67fef6aa-1bce-492b-89a5-0a07d4c0762d)
+![image](https://github.com/user-attachments/assets/3a6f5213-b28b-4eee-a4bf-1429aaa11975)
+![image](https://github.com/user-attachments/assets/9a5e9dea-ae9e-448e-a217-6d8bc23f85ae)
+![image](https://github.com/user-attachments/assets/3dafdb5d-c3b0-4eff-8458-6dc9b04fab14)
+![image](https://github.com/user-attachments/assets/1e3f9e33-d49f-4845-b31a-53fce62a8a9d)
+![image](https://github.com/user-attachments/assets/e43ac8f6-2b34-4c3f-9669-65ba56c40816)
+![image](https://github.com/user-attachments/assets/04c14add-b5b9-410a-8398-164277ef04fd)
+
+
+
+
+
+
+
+
 
