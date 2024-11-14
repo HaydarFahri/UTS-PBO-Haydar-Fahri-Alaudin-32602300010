@@ -71,3 +71,5 @@ Kelas ini adalah inti dari aplikasi yang mengelola daftar buku dan anggota. Kela
 ## Contoh Input
 
 ### Menambah Buku Baru:
+![image](https://github.com/user-attachments/assets/de6de281-b03b-4818-b083-b3d860cc9ecd)
+
