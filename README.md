@@ -103,7 +103,7 @@ dalam menu ini dapat melihat anggota yang sudah terdaftar.
 ![image](https://github.com/user-attachments/assets/e43ac8f6-2b34-4c3f-9669-65ba56c40816)
 
 ### Exit
-dengan mengetik atau memilih menu exit supaya user dapat meninggalkan atau mematikan program.
+dengan mengetik atau memilih menu exit supaya user dapat meninggalkan atau mematikan program / aplikasi.
 ![image](https://github.com/user-attachments/assets/04c14add-b5b9-410a-8398-164277ef04fd)
 
 
