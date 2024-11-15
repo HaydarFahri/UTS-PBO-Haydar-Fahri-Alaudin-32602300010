@@ -12,49 +12,92 @@ Aplikasi ini dibuat untuk mengelola buku, anggota, dan peminjaman di perpustakaa
 6. **Info Anggota**: Menampilkan informasi anggota, termasuk daftar buku yang sedang dipinjam.
 
 ## Struktur Kode
+Program ini adalah sistem manajemen perpustakaan yang memungkinkan pengguna untuk mengelola buku dan anggota perpustakaan, meminjam dan mengembalikan buku. Sistem ini terdiri dari beberapa kelas seperti `Anggota`, `Buku`, dan berbagai jenis buku seperti `BukuDigital` dan `BukuReferensi`, serta kelas utama `Perpustakaan` untuk mengelola semua proses tersebut.
 
-### Kelas `Buku`
-Kelas ini berfungsi untuk mendefinisikan buku yang dapat dipinjam. Buku memiliki atribut seperti judul, pengarang, tahun terbit, ISBN, dan status (tersedia/dipinjam).
+### Kelas dan Penjelasannya
 
-#### Metode:
-- `tampilkanInfoBuku()`: Menampilkan informasi buku.
-- `pinjamBuku()`: Mengubah status buku menjadi dipinjam jika buku tersedia.
-- `kembalikanBuku()`: Mengubah status buku menjadi tersedia.
-- `getjudul()`: Mengembalikan judul buku.
-- `getstatus()`: Mengembalikan status buku.
+#### 1. **Kelas Anggota**
+   - **Fungsi Utama**: Menyimpan informasi tentang anggota perpustakaan, termasuk nama, nomor anggota, dan alamat.
+   - **Atribut**:
+     - `__nama`: Nama anggota.
+     - `__nomorAnggota`: Nomor anggota.
+     - `__alamat`: Alamat anggota.
+     - `__daftarPinjaman`: Daftar buku yang dipinjam oleh anggota.
+   - **Metode**:
+     - `tampilkanInfoAnggota()`: Menampilkan informasi lengkap tentang anggota dan daftar buku yang dipinjam.
+     - `pinjamBuku(buku)`: Memungkinkan anggota untuk meminjam buku, jika buku tersedia.
+     - `kembalikanBuku(judulBuku)`: Mengembalikan buku yang dipinjam oleh anggota.
+     - `dapat_nomorAnggota()`: Mengambil nomor anggota.
 
-### Kelas `BukuDigital` (Subkelas dari `Buku`)
-Kelas ini digunakan untuk buku dengan format digital seperti PDF atau EPUB. Menambahkan informasi tentang format file dan ukuran file.
+#### 2. **Kelas Buku**
+   - **Fungsi Utama**: Menyimpan informasi umum tentang buku, seperti judul, pengarang, tahun terbit, ISBN, dan status (tersedia atau dipinjam).
+   - **Atribut**:
+     - `__judul`: Judul buku.
+     - `__pengarang`: Pengarang buku.
+     - `__tahunTerbit`: Tahun terbit buku.
+     - `__ISBN`: ISBN buku.
+     - `__status`: Status buku, apakah tersedia atau dipinjam.
+   - **Metode**:
+     - `tampilkanInfoBuku()`: Menampilkan informasi lengkap tentang buku.
+     - `pinjamBuku()`: Mengubah status buku menjadi "dipinjam" jika buku tersedia.
+     - `kembalikanBuku()`: Mengubah status buku menjadi "tersedia" saat dikembalikan.
+     - `dapat_judul()`: Mengambil judul buku.
+     - `dapat_status()`: Mengambil status buku.
+     - `dapat_jenis_buku()`: Mengembalikan jenis buku (Normal).
 
-#### Metode:
-- `tampilkanInfoBuku()`: Menampilkan informasi buku digital termasuk format dan ukuran file.
-- `getjenisbuku()`: Mengembalikan jenis buku sebagai "Digital".
+#### 3. **Kelas BukuDigital (Turunan dari Buku)**
+   - **Fungsi Utama**: Menyimpan informasi tentang buku digital, termasuk format file dan ukuran file.
+   - **Atribut**:
+     - `__formatFile`: Format file (misalnya PDF atau EPUB).
+     - `__ukuranFile`: Ukuran file dalam MB.
+   - **Metode**:
+     - `tampilkanInfoBuku()`: Menampilkan informasi lengkap buku digital, termasuk format dan ukuran file.
+     - `dapat_formatFile()`: Mengambil format file buku digital.
+     - `dapat_ukuranFile()`: Mengambil ukuran file buku digital.
+     - `dapat_jenis_buku()`: Mengembalikan jenis buku sebagai "Digital".
 
-### Kelas `BukuReferensi` (Subkelas dari `Buku`)
-Kelas ini digunakan untuk buku referensi. Menambahkan informasi tentang edisi buku.
+#### 4. **Kelas BukuReferensi (Turunan dari Buku)**
+   - **Fungsi Utama**: Menyimpan informasi tentang buku referensi, termasuk edisi.
+   - **Atribut**:
+     - `__edisi`: Edisi buku referensi.
+   - **Metode**:
+     - `tampilkanInfoBuku()`: Menampilkan informasi lengkap tentang buku referensi, termasuk edisi.
+     - `dapat_edisi()`: Mengambil edisi buku referensi.
+     - `dapat_jenis_buku()`: Mengembalikan jenis buku sebagai "Referensi".
 
-#### Metode:
-- `tampilkanInfoBuku()`: Menampilkan informasi buku referensi termasuk edisi.
-- `getjenisbuku()`: Mengembalikan jenis buku sebagai "Referensi".
+#### 5. **Kelas Perpustakaan**
+   - **Fungsi Utama**: Mengelola buku dan anggota perpustakaan. Termasuk fungsionalitas untuk menambah buku dan anggota, serta meminjam dan mengembalikan buku.
+   - **Atribut**:
+     - `__daftarBuku`: Daftar buku yang tersedia di perpustakaan.
+     - `__daftarAnggota`: Daftar anggota yang terdaftar di perpustakaan.
+   - **Metode**:
+     - `tambahBuku(buku)`: Menambahkan buku baru ke daftar buku.
+     - `daftarBukuTersedia()`: Menampilkan semua buku yang tersedia.
+     - `tambahAnggota(anggota)`: Menambahkan anggota baru.
+     - `pinjamBuku(nomorAnggota, judulBuku)`: Meminjam buku dengan judul yang diberikan untuk anggota yang terdaftar.
+     - `kembalikanBuku(nomorAnggota, judulBuku)`: Mengembalikan buku yang dipinjam oleh anggota.
+     - `tampilkanInfoAnggota(nomorAnggota)`: Menampilkan informasi tentang anggota berdasarkan nomor anggota.
 
-### Kelas `Anggota`
-Kelas ini digunakan untuk mendefinisikan anggota perpustakaan yang dapat meminjam buku. Anggota memiliki atribut seperti nama, nomor anggota, alamat, dan daftar buku yang dipinjam.
+#### 6. **Fungsi Main**
+   - **Fungsi Utama**: Menyediakan antarmuka pengguna untuk berinteraksi dengan sistem perpustakaan melalui input perintah.
+   - **Perintah yang Tersedia**:
+     - Menambah buku.
+     - Menampilkan buku yang tersedia.
+     - Menambah anggota.
+     - Meminjam buku.
+     - Mengembalikan buku.
+     - Menampilkan informasi anggota.
+     - Keluar dari aplikasi.
 
-#### Metode:
-- `tampilkanInfoAnggota()`: Menampilkan informasi anggota beserta daftar buku yang sedang dipinjam.
-- `pinjamBuku()`: Memungkinkan anggota untuk meminjam buku.
-- `kembalikanBuku()`: Memungkinkan anggota untuk mengembalikan buku.
-
-### Kelas `Perpustakaan`
-Kelas ini adalah inti dari aplikasi yang mengelola daftar buku dan anggota. Kelas ini juga menangani peminjaman dan pengembalian buku.
-
-#### Metode:
-- `tambahBuku()`: Menambahkan buku baru ke perpustakaan.
-- `daftarBukuTersedia()`: Menampilkan daftar buku yang tersedia untuk dipinjam.
-- `tambahAnggota()`: Menambahkan anggota baru ke perpustakaan.
-- `pinjamBuku()`: Meminjam buku untuk anggota tertentu.
-- `kembalikanBuku()`: Mengembalikan buku yang telah dipinjam.
-- `tampilkanInfoAnggota()`: Menampilkan informasi anggota berdasarkan nomor anggota.
+### Struktur Direktori
+```
+Perpustakaan UTS PBO/
+│
+├── anggota.py          # Definisi kelas Anggota
+├── buku.py             # Definisi kelas Buku, BukuDigital, BukuReferensi
+├── perpustakaan.py     # Definisi kelas Perpustakaan
+└── main.py             # Program utama yang menjalankan aplikasi
+```
 
 ## Instruksi Penggunaan
 
@@ -69,7 +112,7 @@ Kelas ini adalah inti dari aplikasi yang mengelola daftar buku dan anggota. Kela
     - **7**: Keluar dari aplikasi.
 
 ## Contoh Input
-Inputan dapat berupa nomor menu ataupun nama menu yang dipilih.
+Inputan dapat berupa nomor menu ataupun nama menu yang dipilih contohnya saat ingin menambahkan sebuah buku maka bisa langsung memilih nomor sesuai menu yaitu angka 1 atau bisa langsung mengetik "menambah buku".
 
 ### Menambah Buku Baru:
 dalam menu penambahan buku dapat memilih antara buku digital, refrensi, dan normal
@@ -105,6 +148,9 @@ dalam menu ini dapat melihat anggota yang sudah terdaftar.
 ### Exit
 dengan mengetik atau memilih menu exit supaya user dapat meninggalkan atau mematikan program / aplikasi.
 ![image](https://github.com/user-attachments/assets/04c14add-b5b9-410a-8398-164277ef04fd)
+
+## Kesimpulan
+Aplikasi ini adalah sistem perpustakaan sederhana namun komprehensif yang dapat menangani peminjaman dan pengembalian buku, serta memberikan informasi lengkap tentang anggota dan buku
 
 
 
