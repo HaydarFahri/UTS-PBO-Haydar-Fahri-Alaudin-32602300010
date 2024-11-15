@@ -20,22 +20,22 @@ Kelas ini berfungsi untuk mendefinisikan buku yang dapat dipinjam. Buku memiliki
 - `tampilkanInfoBuku()`: Menampilkan informasi buku.
 - `pinjamBuku()`: Mengubah status buku menjadi dipinjam jika buku tersedia.
 - `kembalikanBuku()`: Mengubah status buku menjadi tersedia.
-- `get_judul()`: Mengembalikan judul buku.
-- `get_status()`: Mengembalikan status buku.
+- `getjudul()`: Mengembalikan judul buku.
+- `getstatus()`: Mengembalikan status buku.
 
 ### Kelas `BukuDigital` (Subkelas dari `Buku`)
 Kelas ini digunakan untuk buku dengan format digital seperti PDF atau EPUB. Menambahkan informasi tentang format file dan ukuran file.
 
 #### Metode:
 - `tampilkanInfoBuku()`: Menampilkan informasi buku digital termasuk format dan ukuran file.
-- `get_jenis_buku()`: Mengembalikan jenis buku sebagai "Digital".
+- `getjenisbuku()`: Mengembalikan jenis buku sebagai "Digital".
 
 ### Kelas `BukuReferensi` (Subkelas dari `Buku`)
 Kelas ini digunakan untuk buku referensi. Menambahkan informasi tentang edisi buku.
 
 #### Metode:
 - `tampilkanInfoBuku()`: Menampilkan informasi buku referensi termasuk edisi.
-- `get_jenis_buku()`: Mengembalikan jenis buku sebagai "Referensi".
+- `getjenisbuku()`: Mengembalikan jenis buku sebagai "Referensi".
 
 ### Kelas `Anggota`
 Kelas ini digunakan untuk mendefinisikan anggota perpustakaan yang dapat meminjam buku. Anggota memiliki atribut seperti nama, nomor anggota, alamat, dan daftar buku yang dipinjam.
