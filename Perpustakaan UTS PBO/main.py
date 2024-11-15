@@ -20,7 +20,6 @@ def main():
         perintah = input(">> ").strip().lower()
 
         if perintah == "1" or perintah == "tambah buku":
-            # Validasi Jenis Buku
             jenisbuku = ""
             while jenisbuku not in ["digital", "referensi", "normal"]:
                 jenisbuku = input("Jenis Buku (Digital/Referensi/Normal): ").lower()
@@ -30,7 +29,6 @@ def main():
             judul = input("Judul Buku: ")
             pengarang = input("Pengarang: ")
 
-            # Validasi Tahun Terbit
             tahunTerbit = ""
             while not tahunTerbit.isdigit():
                 tahunTerbit = input("Tahun Terbit: ")
@@ -38,7 +36,6 @@ def main():
                     print("Tahun Terbit harus berupa angka. Coba lagi.")
             tahunTerbit = int(tahunTerbit)
 
-            # Validasi ISBN
             ISBN = ""
             while not ISBN.isdigit():
                 ISBN = input("ISBN: ")
@@ -46,7 +43,6 @@ def main():
                     print("ISBN harus berupa angka. Coba lagi.")
 
             if jenisbuku == "digital":
-                # Validasi Format File dan Ukuran File
                 formatFile = ""
                 while formatFile not in ["pdf", "epub"]:
                     formatFile = input("Format File (PDF/EPUB): ").lower()
@@ -78,7 +74,6 @@ def main():
         elif perintah == "3" or perintah == "tambah anggota":
             nama = input("Nama Anggota: ")
 
-            # Validasi Nomor Anggota
             nomorAnggota = ""
             while not nomorAnggota.isdigit():
                 nomorAnggota = input("Nomor Anggota: ")
